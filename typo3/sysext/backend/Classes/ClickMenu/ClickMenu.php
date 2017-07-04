@@ -261,7 +261,8 @@ class ClickMenu
                 }
                 if ($table === 'tt_content') {
                     $ws_rec = BackendUtility::getRecordWSOL($table, (int)$this->rec['uid']);
-                    $menuItems['view'] = $this->DB_view((int)$ws_rec['pid']);
+                    $anchorSection = '#c' . (int)$ws_rec['uid'];
+                    $menuItems['view'] = $this->DB_view((int)$ws_rec['pid'], $anchorSection);
                 }
             }
             // Edit:
